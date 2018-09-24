@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.index-col{
+  background-color: aqua;
+}
+
+.play-area {
+  background-color: lightpink;
+  flex-grow: 1;
+}
+
+.dragscroll {
+  overflow: hidden;
+  cursor: grab;
+  cursor : -o-grab;
+  cursor : -moz-grab;
+  cursor : -webkit-grab;
+}
+
+.base {
+  width: 50px;
+  height: 50px;
+  margin: 30px;
+}
+
+.base:hover {
+  cursor: auto;
+}
+
+.thing {
+  position: absolute!important;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  margin: 15px;
+}
+.base:after{
+  position: relative;
+  top: 55px;
+}
+.thing:after{
+  margin-top: 55px;
+}
+
+:after{
+  display: block;
+  text-align: center;
+}
+
+$elements: earth,
+        air,
+        fire,
+        water,
+        lava,
+        energy,
+        dust,
+steam,
+mud,
+rain,
+pressure,
+heat,
+sea;
+
+@each $elem in $elements {
+  //$i: index($elements, $elem);
+
+  .#{$elem} {
+    background-image: url(svgs/#{$elem}.svg);
+  }
+
+  .base.#{$elem}:after {
+    content: '#{$elem}';
+  }
+
+  .thing.#{$elem}:after {
+    content: '#{$elem}';
+  }
+}
+
+
+
+

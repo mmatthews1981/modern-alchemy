@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  overflow: hidden; }
+
+.container {
+  display: flex;
+  height: 100vh; }
+
+.index-col {
+  background-color: aqua; }
+
+.play-area {
+  background-color: lightpink;
+  flex-grow: 1; }
+
+.dragscroll {
+  overflow: hidden;
+  cursor: grab;
+  cursor: -o-grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab; }
+
+.base {
+  width: 50px;
+  height: 50px;
+  margin: 30px; }
+
+.base:hover {
+  cursor: auto; }
+
+.thing {
+  position: absolute !important;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  margin: 15px; }
+
+.base:after {
+  position: relative;
+  top: 55px; }
+
+.thing:after {
+  margin-top: 55px; }
+
+:after {
+  display: block;
+  text-align: center; }
+
+.earth {
+  background-image: url(svgs/earth.svg); }
+
+.base.earth:after {
+  content: "earth"; }
+
+.thing.earth:after {
+  content: "earth"; }
+
+.air {
+  background-image: url(svgs/air.svg); }
+
+.base.air:after {
+  content: "air"; }
+
+.thing.air:after {
+  content: "air"; }
+
+.fire {
+  background-image: url(svgs/fire.svg); }
+
+.base.fire:after {
+  content: "fire"; }
+
+.thing.fire:after {
+  content: "fire"; }
+
+.water {
+  background-image: url(svgs/water.svg); }
+
+.base.water:after {
+  content: "water"; }
+
+.thing.water:after {
+  content: "water"; }
+
+.lava {
+  background-image: url(svgs/lava.svg); }
+
+.base.lava:after {
+  content: "lava"; }
+
+.thing.lava:after {
+  content: "lava"; }
+
+.energy {
+  background-image: url(svgs/energy.svg); }
+
+.base.energy:after {
+  content: "energy"; }
+
+.thing.energy:after {
+  content: "energy"; }
+
+.dust {
+  background-image: url(svgs/dust.svg); }
+
+.base.dust:after {
+  content: "dust"; }
+
+.thing.dust:after {
+  content: "dust"; }
+
+.steam {
+  background-image: url(svgs/steam.svg); }
+
+.base.steam:after {
+  content: "steam"; }
+
+.thing.steam:after {
+  content: "steam"; }
+
+.mud {
+  background-image: url(svgs/mud.svg); }
+
+.base.mud:after {
+  content: "mud"; }
+
+.thing.mud:after {
+  content: "mud"; }
+
+.rain {
+  background-image: url(svgs/rain.svg); }
+
+.base.rain:after {
+  content: "rain"; }
+
+.thing.rain:after {
+  content: "rain"; }
+
+.pressure {
+  background-image: url(svgs/pressure.svg); }
+
+.base.pressure:after {
+  content: "pressure"; }
+
+.thing.pressure:after {
+  content: "pressure"; }
+
+.heat {
+  background-image: url(svgs/heat.svg); }
+
+.base.heat:after {
+  content: "heat"; }
+
+.thing.heat:after {
+  content: "heat"; }
+
+.sea {
+  background-image: url(svgs/sea.svg); }
+
+.base.sea:after {
+  content: "sea"; }
+
+.thing.sea:after {
+  content: "sea"; }
+
+/*# sourceMappingURL=style.css.map */
