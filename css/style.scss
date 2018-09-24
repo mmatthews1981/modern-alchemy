@@ -9,12 +9,43 @@ body {
 }
 
 .index-col{
-  background-color: aqua;
+  background-color: ghostwhite;
+
 }
 
 .play-area {
-  background-color: lightpink;
+  background-color: ghostwhite;
+  background-image: url(svgs/cl5ba840ef98425.gif);
+  background-position: right top;
+  background-repeat: no-repeat;
   flex-grow: 1;
+  display: flex;
+}
+
+.clear-screen {
+  background-color: lightgrey;
+  padding: 15px 25px;
+  width: max-content;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 30px 20px;
+  align-self: flex-end;
+  cursor: default;
+}
+
+.clear-screen:active {
+  background-color: gray;
+}
+
+.trash-can{
+  height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
+  align-self: flex-end;
+  background-image: url(svgs/trash-can.svg);
+  background-repeat: no-repeat;
+  background-position: 0 -8px;
+  border-radius: 5px;
 }
 
 .dragscroll {

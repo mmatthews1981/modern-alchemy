@@ -1,7 +1,5 @@
 //TODO: figure out how to make new clones immediately droppable and mixable
 //TODO: fix z-index of last-selected element
-//TODO: clear playspace button
-//TODO: add recycling bin
 //TODO: add cookie to save active element progress automatically
 //TODO: add button to clear progress
 
@@ -17,10 +15,17 @@ function buildBaseList() {
             $('.index-col').append(newbase);
         }
 
-        var alphabeticallyOrderedDivs = $('.base').sort(function (a, b) {
-            return $(a).data("element") > $(b).data('element');
+        var bases = $('.base');
+        bases.sort(function(a,b){
+            var an = a.getAttribute('data-element'),
+                bn = b.getAttribute('data-element');
+
+            if(an > bn) { return 1; }
+            if(an < bn) { return -1; }
+            return 0;
         });
-        $(".index-col").html(alphabeticallyOrderedDivs);
+
+        $(".index-col").html(bases)
 
     });
 
@@ -84,4 +89,25 @@ var dropObj = {
             buildBaseList();
         }
     }
-}
+};
+
+$('.clear-screen').click(function (e) {
+    $('.thing').fadeOut('slow', function () {
+        $(this).remove();
+    });
+});
+
+$('.trash-can').droppable({
+    accept: '.thing',
+    tolerance: "pointer",
+    over: function(event,ui){
+        $(this).animate({backgroundColor: 'green'}, 'fast');
+    },
+    out: function(event,ui){
+        $(this).animate({backgroundColor: 'transparent'}, 'fast');
+    },
+    drop: function(event, ui){
+        $(ui.draggable).remove();
+        $(this).animate({backgroundColor: 'transparent'}, 'fast');
+    }
+});
