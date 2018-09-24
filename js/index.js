@@ -33,6 +33,7 @@ function buildBaseList() {
     $('.base').draggable({
         containment: ".container",
         scroll: false,
+        appendTo: '.play-area',
         helper: function (e, ui) {
             var elem = $(this).data('element');
             return $('<div class="thing original ' + elem + ' " data-element="' + elem + '"></div>');
