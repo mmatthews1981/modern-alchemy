@@ -1,5 +1,4 @@
 //TODO: figure out how to make new clones immediately droppable and mixable
-//TODO: fix z-index of last-selected element
 //TODO: add cookie to save active element progress automatically
 //TODO: add button to clear progress
 //TODO: add scroll-wheel scrolling to element list
@@ -38,7 +37,11 @@ function buildBaseList() {
             return $('<div class="thing original" data-element="' + elem + '"></div>')
                 .draggable({
                     containment: ".container",
-                    scroll: false
+                    scroll: false,
+                    start: function(e, ui){
+                        $('.thing').css('z-index', 1);
+                        $(ui.helper).css('z-index', 2);
+                    }
                 })
                 .droppable(dropObj)
         }
@@ -47,13 +50,16 @@ function buildBaseList() {
     $(".play-area").droppable({
         drop: function (event, ui) {
             var elem = ui.helper.data('element');
-            console.log(elem)
             if (ui.helper.hasClass('original')) {
                 ui.helper
                     .clone()
                     .draggable({
                         containment: ".container",
-                        scroll: false
+                        scroll: false,
+                        start: function(e, ui){
+                            $('.thing').css('z-index', 1);
+                            $(ui.helper).css('z-index', 2);
+                        }
                     })
                     .droppable(dropObj)
                     .addClass(elem)
@@ -69,7 +75,6 @@ var dropObj = {
     accept: '.thing',
     tolerance: "pointer",
     drop: function (droppede, droppedui) {
-        console.log('drop')
         var dragged = $(droppedui.draggable);
         var dropped = $(this);
         var element = encyclopedia[dragged.data("element")][dropped.data("element")];
@@ -79,7 +84,11 @@ var dropObj = {
             $('<div class="thing ' + element + ' " data-element="' + element + '"></div>')
                 .draggable({
                     containment: ".container",
-                    scroll: false
+                    scroll: false,
+                    start: function(e, ui){
+                        $('.thing').css('z-index', 1);
+                        $(ui.helper).css('z-index', 2);
+                    }
                 })
                 .droppable(dropObj)
                 .css({top: droppedui.position.top, left: droppedui.position.left})
@@ -104,6 +113,12 @@ $('.clear-screen').click(function (e) {
     $('.thing').fadeOut('slow', function () {
         $(this).remove();
     });
+});
+
+$('.thing').click(function(el){
+
+    $('.thing').css('z-index', 1);
+    $(el.target).css('z-index', 2);
 });
 
 $('.trash-can').droppable({
