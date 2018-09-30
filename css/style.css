@@ -191,4 +191,112 @@ body {
 .thing.sea:after {
   content: "sea"; }
 
+.obsidian {
+  background-image: url(svgs/obsidian.svg); }
+
+.base.obsidian:after {
+  content: "obsidian"; }
+
+.thing.obsidian:after {
+  content: "obsidian"; }
+
+.rock {
+  background-image: url(svgs/rock.svg); }
+
+.base.rock:after {
+  content: "rock"; }
+
+.thing.rock:after {
+  content: "rock"; }
+
+.arrowhead {
+  background-image: url(svgs/arrowhead.svg); }
+
+.base.arrowhead:after {
+  content: "arrowhead"; }
+
+.thing.arrowhead:after {
+  content: "arrowhead"; }
+
+.land {
+  background-image: url(svgs/land.svg); }
+
+.base.land:after {
+  content: "land"; }
+
+.thing.land:after {
+  content: "land"; }
+
+.brick {
+  background-image: url(svgs/brick.svg); }
+
+.base.brick:after {
+  content: "brick"; }
+
+.thing.brick:after {
+  content: "brick"; }
+
+.lake {
+  background-image: url(svgs/lake.svg); }
+
+.base.lake:after {
+  content: "lake"; }
+
+.thing.lake:after {
+  content: "lake"; }
+
+.wind {
+  background-image: url(svgs/wind.svg); }
+
+.base.wind:after {
+  content: "wind"; }
+
+.thing.wind:after {
+  content: "wind"; }
+
+.movement {
+  background-image: url(svgs/movement.svg); }
+
+.base.movement:after {
+  content: "movement"; }
+
+.thing.movement:after {
+  content: "movement"; }
+
+.river {
+  background-image: url(svgs/river.svg); }
+
+.base.river:after {
+  content: "river"; }
+
+.thing.river:after {
+  content: "river"; }
+
+.lightning {
+  background-image: url(svgs/lightning.svg); }
+
+.base.lightning:after {
+  content: "lightning"; }
+
+.thing.lightning:after {
+  content: "lightning"; }
+
+.swamp {
+  background-image: url(svgs/swamp.svg); }
+
+.base.swamp:after {
+  content: "swamp"; }
+
+.thing.swamp:after {
+  content: "swamp"; }
+
+.life {
+  background-image: url(svgs/life.svg); }
+
+.base.life:after {
+  content: "life"; }
+
+.thing.life:after {
+  content: "life"; }
+
 /*# sourceMappingURL=style.css.map */

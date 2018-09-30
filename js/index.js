@@ -2,6 +2,7 @@
 //TODO: fix z-index of last-selected element
 //TODO: add cookie to save active element progress automatically
 //TODO: add button to clear progress
+//TODO: add scroll-wheel scrolling to element list
 
 buildBaseList();
 
