@@ -25,9 +25,7 @@ function buildBaseList() {
             if(an < bn) { return -1; }
             return 0;
         });
-
         $(".index-col").html(bases)
-
     });
 
 

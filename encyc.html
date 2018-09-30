@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>encyclopedia reference</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<script src="js/encyclopedia.js"></script>
+<script>
+    Object.keys(encyclopedia).forEach(function (key) {
+
+
+            var newbase = $('<div class="base reference" data-element="' + key + '"></div>');
+            $(newbase).addClass(key);
+            $('body').append(newbase);
+
+
+    });
+</script>
+</body>
+</html>
