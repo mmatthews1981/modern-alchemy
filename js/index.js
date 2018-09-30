@@ -37,12 +37,19 @@ function buildBaseList() {
         appendTo: '.play-area',
         helper: function (e, ui) {
             var elem = $(this).data('element');
-            return $('<div class="thing original ' + elem + ' " data-element="' + elem + '"></div>');
+            return $('<div class="thing original" data-element="' + elem + '"></div>')
+                .draggable({
+                    containment: ".container",
+                    scroll: false
+                })
+                .droppable(dropObj)
         }
     });
 
     $(".play-area").droppable({
         drop: function (event, ui) {
+            var elem = ui.helper.data('element');
+            console.log(elem)
             if (ui.helper.hasClass('original')) {
                 ui.helper
                     .clone()
@@ -51,6 +58,7 @@ function buildBaseList() {
                         scroll: false
                     })
                     .droppable(dropObj)
+                    .addClass(elem)
                     .removeClass('original')
                     .appendTo($(this))
             }
@@ -63,6 +71,7 @@ var dropObj = {
     accept: '.thing',
     tolerance: "pointer",
     drop: function (droppede, droppedui) {
+        console.log('drop')
         var dragged = $(droppedui.draggable);
         var dropped = $(this);
         var element = encyclopedia[dragged.data("element")][dropped.data("element")];

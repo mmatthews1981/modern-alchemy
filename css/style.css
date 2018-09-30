@@ -18,6 +18,10 @@ body {
   flex-grow: 1;
   display: flex; }
 
+.original {
+  background-image: url(svgs/loading.gif);
+  background-size: contain; }
+
 .clear-screen {
   background-color: lightgrey;
   padding: 15px 25px;
