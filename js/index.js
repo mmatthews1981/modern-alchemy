@@ -1,113 +1,116 @@
-//TODO: figure out how to make new clones immediately droppable and mixable
-//TODO: add cookie to save active element progress automatically
-//TODO: add button to clear progress
-//TODO: add scroll-wheel scrolling to element list
-
 buildBaseList();
 
 function buildBaseList() {
-    $('.base').remove();
+    $('.first').remove();
     Object.keys(encyclopedia).forEach(function (key) {
 
         if (encyclopedia[key].active) {
-            var newbase = $('<div class="base" data-element="' + key + '"></div>');
+            var newbase = $('<div class="base first" data-element="' + key + '"></div>');
             $(newbase).addClass(key);
             $('.index-col').append(newbase);
         }
 
-        var bases = $('.base');
-        bases.sort(function(a,b){
+        var bases = $('.first');
+        bases.sort(function (a, b) {
             var an = a.getAttribute('data-element'),
                 bn = b.getAttribute('data-element');
 
-            if(an > bn) { return 1; }
-            if(an < bn) { return -1; }
+            if (an > bn) {
+                return 1;
+            }
+            if (an < bn) {
+                return -1;
+            }
             return 0;
         });
         $(".index-col").html(bases)
     });
 
+    interact('.base').draggable({
+        inertia: true,
+        restrict: {
+            restriction: ".play-area",
+            endOnly: true,
+            elementRect: { top: 0, left: 0, bottom: 1, right: 1 }
+        },
+        onmove: function (event) {
+            var target = event.target;
+            var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+            var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-    $('.base').draggable({
-        containment: ".container",
-        scroll: false,
-        appendTo: '.play-area',
-        helper: function (e, ui) {
-            var elem = $(this).data('element');
-            return $('<div class="thing original" data-element="' + elem + '"></div>')
-                .draggable({
-                    containment: ".container",
-                    scroll: false,
-                    start: function(e, ui){
-                        $('.thing').css('z-index', 1);
-                        $(ui.helper).css('z-index', 2);
-                    }
-                })
-                .droppable(dropObj)
+            target.style.webkitTransform =
+                target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+
+            target.setAttribute('data-x', x);
+            target.setAttribute('data-y', y);
+
+        },
+        onend: function(event) {
+
         }
-    });
+    }).on('move', function (event) {
+        var interaction = event.interaction;
+        if (interaction.pointerIsDown && !interaction.interacting() && event.currentTarget.getAttribute('clonable') != 'false') {
+            var original = event.currentTarget;
+            var clone = event.currentTarget.cloneNode(true);
+            var x = clone.offsetLeft;
+            var y = clone.offsetTop;
+            clone.setAttribute('clonable','false');
+            clone.style.position = "absolute";
+            clone.style.left = original.offsetLeft+"px";
+            clone.style.top = original.offsetTop+"px";
+            $(clone).addClass('thing').removeClass('first');
+            original.parentElement.appendChild(clone);
+            interaction.start({ name: 'drag' },event.interactable,clone);
+        }
+        $('.thing').css('z-index', 1);
+        $(event.currentTarget).css('z-index', 2);
+    })  .dropzone({
+        ondrop: function (event) {
+            //event.target = dropzone
+            //event.relatedTarget = dropped element
+            var interaction = event.interaction;
 
-    $(".play-area").droppable({
-        drop: function (event, ui) {
-            var elem = ui.helper.data('element');
-            if (ui.helper.hasClass('original')) {
-                ui.helper
-                    .clone()
-                    .draggable({
-                        containment: ".container",
-                        scroll: false,
-                        start: function(e, ui){
-                            $('.thing').css('z-index', 1);
-                            $(ui.helper).css('z-index', 2);
-                        }
-                    })
-                    .droppable(dropObj)
-                    .addClass(elem)
-                    .removeClass('original')
-                    .appendTo($(this))
+
+            console.log(event);
+            var element = encyclopedia[$(event.relatedTarget).data("element")][$(event.target).data("element")];
+            if($(event.target).hasClass('thing') && element){
+
+                console.log(event)
+                var clone = event.target.cloneNode(true);
+                clone.setAttribute('clonable','false');
+                clone.style.position = "absolute";
+                clone.style.left = event.target.offsetLeft+"px";
+                clone.style.top = event.target.offsetTop+"px";
+                $(clone).removeClass($(event.target).data('element'))
+                    .addClass(element)
+                    .data('element', element);
+
+                $('.play-area').append(clone);
+                interaction.start({ name: 'drag' },event.interactable,clone);
+                $(event.relatedTarget).fadeOut('slow', function () {
+                    $(this).remove();
+                });
+                $(event.target).fadeOut('slow', function () {
+                    $(this).remove();
+                });
+
+                encyclopedia[element].active = true;
+                buildBaseList();
             }
         }
     });
 
 }
 
-var dropObj = {
-    accept: '.thing',
-    tolerance: "pointer",
-    drop: function (droppede, droppedui) {
-        var dragged = $(droppedui.draggable);
-        var dropped = $(this);
-        var element = encyclopedia[dragged.data("element")][dropped.data("element")];
+interact('.trash-can').dropzone({
+    ondrop: function (event) {
 
-        if (element) {
-
-            $('<div class="thing ' + element + ' " data-element="' + element + '"></div>')
-                .draggable({
-                    containment: ".container",
-                    scroll: false,
-                    start: function(e, ui){
-                        $('.thing').css('z-index', 1);
-                        $(ui.helper).css('z-index', 2);
-                    }
-                })
-                .droppable(dropObj)
-                .css({top: droppedui.position.top, left: droppedui.position.left})
-                .hide()
-                .appendTo('.play-area')
-                .fadeIn('slow');
-
-            $(dragged).fadeOut('slow', function () {
-                $(this).remove();
-            });
-            $(dropped).fadeOut('slow', function () {
-                $(this).remove();
-            });
-
-            encyclopedia[element].active = true;
-            buildBaseList();
-        }
+        $(event.relatedTarget).fadeOut('slow', function () {
+            $(this).remove();
+        });
     }
-};
+})
 
 $('.clear-screen').click(function (e) {
     $('.thing').fadeOut('slow', function () {
@@ -115,23 +118,3 @@ $('.clear-screen').click(function (e) {
     });
 });
 
-$('.thing').click(function(el){
-
-    $('.thing').css('z-index', 1);
-    $(el.target).css('z-index', 2);
-});
-
-$('.trash-can').droppable({
-    accept: '.thing',
-    tolerance: "pointer",
-    over: function(event,ui){
-        $(this).animate({backgroundColor: 'green'}, 'fast');
-    },
-    out: function(event,ui){
-        $(this).animate({backgroundColor: 'transparent'}, 'fast');
-    },
-    drop: function(event, ui){
-        $(ui.draggable).remove();
-        $(this).animate({backgroundColor: 'transparent'}, 'fast');
-    }
-});

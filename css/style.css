@@ -65,17 +65,11 @@ body {
 
 .thing {
   position: absolute !important;
-  width: 50px;
-  height: 50px;
-  z-index: 1;
-  margin: 15px; }
+  z-index: 1; }
 
 .base:after {
   position: relative;
   top: 55px; }
-
-.thing:after {
-  margin-top: 55px; }
 
 :after {
   display: block;
