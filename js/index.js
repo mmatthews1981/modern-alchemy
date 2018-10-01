@@ -56,7 +56,6 @@ function buildBaseList() {
 
         }
     }).on('move', function (event) {
-        console.log(event)
         var interaction = event.interaction;
         if (interaction.pointerIsDown && !interaction.interacting() && event.currentTarget.getAttribute('clonable') != 'false') {
             var original = event.currentTarget;
@@ -79,12 +78,9 @@ function buildBaseList() {
             //event.relatedTarget = dropped element
             var interaction = event.interaction;
 
-
-            console.log(event);
             var element = encyclopedia[$(event.relatedTarget).data("element")][$(event.target).data("element")];
             if($(event.target).hasClass('thing') && element){
 
-                console.log(event)
                 var clone = event.target.cloneNode(true);
                 clone.setAttribute('clonable','false');
                 clone.style.position = "absolute";
