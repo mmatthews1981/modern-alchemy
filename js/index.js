@@ -1,3 +1,8 @@
+//TODO: add cookie to save active element progress automatically
+//TODO: add button to clear progress
+//TODO: add scroll-wheel scrolling to element list
+
+
 buildBaseList();
 
 function buildBaseList() {
@@ -49,6 +54,7 @@ function buildBaseList() {
 
         }
     }).on('move', function (event) {
+        console.log(event)
         var interaction = event.interaction;
         if (interaction.pointerIsDown && !interaction.interacting() && event.currentTarget.getAttribute('clonable') != 'false') {
             var original = event.currentTarget;
@@ -57,10 +63,10 @@ function buildBaseList() {
             var y = clone.offsetTop;
             clone.setAttribute('clonable','false');
             clone.style.position = "absolute";
-            clone.style.left = original.offsetLeft+"px";
-            clone.style.top = original.offsetTop+"px";
+            clone.style.left = (event.clientX - 50)+"px";
+            clone.style.top = (event.clientY -50)+"px";
             $(clone).addClass('thing').removeClass('first');
-            original.parentElement.appendChild(clone);
+            $('.play-area').append(clone);
             interaction.start({ name: 'drag' },event.interactable,clone);
         }
         $('.thing').css('z-index', 1);

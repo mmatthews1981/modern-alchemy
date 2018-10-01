@@ -8,7 +8,14 @@ body {
 
 .index-col {
   background-color: ghostwhite;
-  border-right: 2px solid gray; }
+  border-right: 2px solid gray;
+  overflow: auto; }
+
+.index-col::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */ }
 
 .play-area {
   background-color: ghostwhite;
