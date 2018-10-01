@@ -1,6 +1,8 @@
 //TODO: add cookie to save active element progress automatically
 //TODO: add button to clear progress
 //TODO: add scroll-wheel scrolling to element list
+//TODO: add stroke to wind icon and replace
+
 
 
 buildBaseList();
