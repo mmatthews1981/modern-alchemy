@@ -2,6 +2,9 @@
 //TODO: add button to clear progress
 //TODO: add scroll-wheel scrolling to element list
 //TODO: add stroke to wind icon and replace
+//TODO: unmixable elements slide off each other
+//TODO: slides try to mix with anything it lands on
+//TODO: add non-mixing element interactivity, like long drag = time or drag from blank = nothing
 
 
 
@@ -55,9 +58,18 @@ function buildBaseList() {
         onend: function(event) {
 
         }
-    }).on('move', function (event) {
+    }).on('dragstart', function(event){
+        $('.index-col').removeClass('dragscroll');
+        dragscroll.reset()
+    }).on('dragend', function(event){
+        $('.index-col').addClass('dragscroll');
+        dragscroll.reset()
+    })
+        .on('move', function (event) {
+
         var interaction = event.interaction;
         if (interaction.pointerIsDown && !interaction.interacting() && event.currentTarget.getAttribute('clonable') != 'false') {
+
             var original = event.currentTarget;
             var clone = event.currentTarget.cloneNode(true);
             var x = clone.offsetLeft;
@@ -76,6 +88,7 @@ function buildBaseList() {
         ondrop: function (event) {
             //event.target = dropzone
             //event.relatedTarget = dropped element
+
             var interaction = event.interaction;
 
             var element = encyclopedia[$(event.relatedTarget).data("element")][$(event.target).data("element")];
