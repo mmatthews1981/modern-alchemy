@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9cbead39-fc0b-41cf-a749-26b5e401631d" name="meredithmatthews.net/modern-alchemy" url="http://meredithmatthews.net/modern-alchemy/">
+        <fileTransfer host="meredithmatthews.net" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

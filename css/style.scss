@@ -3,7 +3,9 @@ body {
   overflow: hidden;
 }
 
-
+.dragscroll {
+  overflow: auto!important;
+}
 .container {
   display: flex;
   height: 100vh;
@@ -76,11 +78,9 @@ body {
   width: 50px;
   height: 50px;
   margin: 30px;
+  cursor: grab;
 }
 
-.base:hover {
-  cursor: auto;
-}
 
 .thing {
   position: absolute!important;
