@@ -5,6 +5,7 @@
 //TODO: unmixable elements slide off each other
 //TODO: slides try to mix with anything it lands on
 //TODO: add non-mixing element interactivity, like long drag = time or drag from blank = nothing
+//TODO: add counter and element total
 
 
 
@@ -12,9 +13,18 @@ buildBaseList();
 
 function buildBaseList() {
     $('.first').remove();
+
+    var totalElements = 0;
+    var activeElements = 0;
+
     Object.keys(encyclopedia).forEach(function (key) {
 
+        totalElements += 1;
+
         if (encyclopedia[key].active) {
+
+            activeElements += 1;
+
             var newbase = $('<div class="base first" data-element="' + key + '"></div>');
             $(newbase).addClass(key);
             $('.index-col').append(newbase);
@@ -117,6 +127,9 @@ function buildBaseList() {
             }
         }
     });
+
+    $('.activeElements').text(activeElements);
+    $('.totalElements').text(totalElements);
 
 }
 

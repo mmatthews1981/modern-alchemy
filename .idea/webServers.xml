@@ -2,10 +2,10 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="9cbead39-fc0b-41cf-a749-26b5e401631d" name="meredithmatthews.net/modern-alchemy" url="http://meredithmatthews.net/modern-alchemy/">
-        <fileTransfer host="meredithmatthews.net" port="21">
+      <webServer id="c20cc17c-0a8c-4c51-9b70-2d152e730502" name="modern alchemy" url="http://meredithmatthews.net/modern-alchemy/">
+        <fileTransfer host="ftp.meredithmatthews.net" port="21" rootFolder="/modern-alchemy">
           <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" />
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
           <option name="port" value="21" />
         </fileTransfer>

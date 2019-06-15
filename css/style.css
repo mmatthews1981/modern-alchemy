@@ -1,24 +1,29 @@
 body {
   margin: 0;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .dragscroll {
-  overflow: auto !important; }
+  overflow: auto !important;
+}
 
 .container {
   display: flex;
-  height: 100vh; }
+  height: 100vh;
+}
 
 .index-col {
   background-color: ghostwhite;
   border-right: 2px solid gray;
-  overflow: auto; }
+  overflow: auto;
+}
 
 .index-col::-webkit-scrollbar {
   width: 0px;
   /* remove scrollbar space */
   background: transparent;
-  /* optional: just make scrollbar invisible */ }
+  /* optional: just make scrollbar invisible */
+}
 
 .play-area {
   background-color: ghostwhite;
@@ -26,14 +31,17 @@ body {
   background-position: right top;
   background-repeat: no-repeat;
   flex-grow: 1;
-  display: flex; }
+  display: flex;
+}
 
 .original {
   background-image: url(svgs/loading.gif);
-  background-size: contain; }
+  background-size: contain;
+}
 
 .reference {
-  display: inline-block; }
+  display: inline-block;
+}
 
 .clear-screen {
   background-color: lightgrey;
@@ -43,10 +51,12 @@ body {
   border-radius: 5px;
   margin: 30px 20px;
   align-self: flex-end;
-  cursor: default; }
+  cursor: default;
+}
 
 .clear-screen:active {
-  background-color: gray; }
+  background-color: gray;
+}
 
 .trash-can {
   height: 100px;
@@ -56,256 +66,343 @@ body {
   background-image: url(svgs/trash-can.svg);
   background-repeat: no-repeat;
   background-position: 0 -8px;
-  border-radius: 5px; }
+  border-radius: 5px;
+}
+
+.totals {
+  align-self: flex-end;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
 
 .dragscroll {
   overflow: hidden;
   cursor: grab;
   cursor: -o-grab;
   cursor: -moz-grab;
-  cursor: -webkit-grab; }
+  cursor: -webkit-grab;
+}
 
 .base {
   width: 50px;
   height: 50px;
   margin: 30px;
-  cursor: grab; }
+  cursor: grab;
+}
 
 .thing {
   position: absolute !important;
-  z-index: 1; }
+  z-index: 1;
+}
 
 .base:after {
   position: relative;
-  top: 55px; }
+  top: 55px;
+}
 
 :after {
   display: block;
-  text-align: center; }
+  text-align: center;
+}
 
 .earth {
-  background-image: url(svgs/earth.svg); }
+  background-image: url(svgs/earth.svg);
+}
 
 .base.earth:after {
-  content: "earth"; }
+  content: "earth";
+}
 
 .thing.earth:after {
-  content: "earth"; }
+  content: "earth";
+}
 
 .air {
-  background-image: url(svgs/air.svg); }
+  background-image: url(svgs/air.svg);
+}
 
 .base.air:after {
-  content: "air"; }
+  content: "air";
+}
 
 .thing.air:after {
-  content: "air"; }
+  content: "air";
+}
 
 .fire {
-  background-image: url(svgs/fire.svg); }
+  background-image: url(svgs/fire.svg);
+}
 
 .base.fire:after {
-  content: "fire"; }
+  content: "fire";
+}
 
 .thing.fire:after {
-  content: "fire"; }
+  content: "fire";
+}
 
 .water {
-  background-image: url(svgs/water.svg); }
+  background-image: url(svgs/water.svg);
+}
 
 .base.water:after {
-  content: "water"; }
+  content: "water";
+}
 
 .thing.water:after {
-  content: "water"; }
+  content: "water";
+}
 
 .lava {
-  background-image: url(svgs/lava.svg); }
+  background-image: url(svgs/lava.svg);
+}
 
 .base.lava:after {
-  content: "lava"; }
+  content: "lava";
+}
 
 .thing.lava:after {
-  content: "lava"; }
+  content: "lava";
+}
 
 .energy {
-  background-image: url(svgs/energy.svg); }
+  background-image: url(svgs/energy.svg);
+}
 
 .base.energy:after {
-  content: "energy"; }
+  content: "energy";
+}
 
 .thing.energy:after {
-  content: "energy"; }
+  content: "energy";
+}
 
 .dust {
-  background-image: url(svgs/dust.svg); }
+  background-image: url(svgs/dust.svg);
+}
 
 .base.dust:after {
-  content: "dust"; }
+  content: "dust";
+}
 
 .thing.dust:after {
-  content: "dust"; }
+  content: "dust";
+}
 
 .steam {
-  background-image: url(svgs/steam.svg); }
+  background-image: url(svgs/steam.svg);
+}
 
 .base.steam:after {
-  content: "steam"; }
+  content: "steam";
+}
 
 .thing.steam:after {
-  content: "steam"; }
+  content: "steam";
+}
 
 .mud {
-  background-image: url(svgs/mud.svg); }
+  background-image: url(svgs/mud.svg);
+}
 
 .base.mud:after {
-  content: "mud"; }
+  content: "mud";
+}
 
 .thing.mud:after {
-  content: "mud"; }
+  content: "mud";
+}
 
 .rain {
-  background-image: url(svgs/rain.svg); }
+  background-image: url(svgs/rain.svg);
+}
 
 .base.rain:after {
-  content: "rain"; }
+  content: "rain";
+}
 
 .thing.rain:after {
-  content: "rain"; }
+  content: "rain";
+}
 
 .pressure {
-  background-image: url(svgs/pressure.svg); }
+  background-image: url(svgs/pressure.svg);
+}
 
 .base.pressure:after {
-  content: "pressure"; }
+  content: "pressure";
+}
 
 .thing.pressure:after {
-  content: "pressure"; }
+  content: "pressure";
+}
 
 .heat {
-  background-image: url(svgs/heat.svg); }
+  background-image: url(svgs/heat.svg);
+}
 
 .base.heat:after {
-  content: "heat"; }
+  content: "heat";
+}
 
 .thing.heat:after {
-  content: "heat"; }
+  content: "heat";
+}
 
 .sea {
-  background-image: url(svgs/sea.svg); }
+  background-image: url(svgs/sea.svg);
+}
 
 .base.sea:after {
-  content: "sea"; }
+  content: "sea";
+}
 
 .thing.sea:after {
-  content: "sea"; }
+  content: "sea";
+}
 
 .obsidian {
-  background-image: url(svgs/obsidian.svg); }
+  background-image: url(svgs/obsidian.svg);
+}
 
 .base.obsidian:after {
-  content: "obsidian"; }
+  content: "obsidian";
+}
 
 .thing.obsidian:after {
-  content: "obsidian"; }
+  content: "obsidian";
+}
 
 .rock {
-  background-image: url(svgs/rock.svg); }
+  background-image: url(svgs/rock.svg);
+}
 
 .base.rock:after {
-  content: "rock"; }
+  content: "rock";
+}
 
 .thing.rock:after {
-  content: "rock"; }
+  content: "rock";
+}
 
 .arrowhead {
-  background-image: url(svgs/arrowhead.svg); }
+  background-image: url(svgs/arrowhead.svg);
+}
 
 .base.arrowhead:after {
-  content: "arrowhead"; }
+  content: "arrowhead";
+}
 
 .thing.arrowhead:after {
-  content: "arrowhead"; }
+  content: "arrowhead";
+}
 
 .land {
-  background-image: url(svgs/land.svg); }
+  background-image: url(svgs/land.svg);
+}
 
 .base.land:after {
-  content: "land"; }
+  content: "land";
+}
 
 .thing.land:after {
-  content: "land"; }
+  content: "land";
+}
 
 .brick {
-  background-image: url(svgs/brick.svg); }
+  background-image: url(svgs/brick.svg);
+}
 
 .base.brick:after {
-  content: "brick"; }
+  content: "brick";
+}
 
 .thing.brick:after {
-  content: "brick"; }
+  content: "brick";
+}
 
 .lake {
-  background-image: url(svgs/lake.svg); }
+  background-image: url(svgs/lake.svg);
+}
 
 .base.lake:after {
-  content: "lake"; }
+  content: "lake";
+}
 
 .thing.lake:after {
-  content: "lake"; }
+  content: "lake";
+}
 
 .wind {
-  background-image: url(svgs/wind.svg); }
+  background-image: url(svgs/wind.svg);
+}
 
 .base.wind:after {
-  content: "wind"; }
+  content: "wind";
+}
 
 .thing.wind:after {
-  content: "wind"; }
+  content: "wind";
+}
 
 .movement {
-  background-image: url(svgs/movement.svg); }
+  background-image: url(svgs/movement.svg);
+}
 
 .base.movement:after {
-  content: "movement"; }
+  content: "movement";
+}
 
 .thing.movement:after {
-  content: "movement"; }
+  content: "movement";
+}
 
 .river {
-  background-image: url(svgs/river.svg); }
+  background-image: url(svgs/river.svg);
+}
 
 .base.river:after {
-  content: "river"; }
+  content: "river";
+}
 
 .thing.river:after {
-  content: "river"; }
+  content: "river";
+}
 
 .lightning {
-  background-image: url(svgs/lightning.svg); }
+  background-image: url(svgs/lightning.svg);
+}
 
 .base.lightning:after {
-  content: "lightning"; }
+  content: "lightning";
+}
 
 .thing.lightning:after {
-  content: "lightning"; }
+  content: "lightning";
+}
 
 .swamp {
-  background-image: url(svgs/swamp.svg); }
+  background-image: url(svgs/swamp.svg);
+}
 
 .base.swamp:after {
-  content: "swamp"; }
+  content: "swamp";
+}
 
 .thing.swamp:after {
-  content: "swamp"; }
+  content: "swamp";
+}
 
 .life {
-  background-image: url(svgs/life.svg); }
+  background-image: url(svgs/life.svg);
+}
 
 .base.life:after {
-  content: "life"; }
+  content: "life";
+}
 
 .thing.life:after {
-  content: "life"; }
+  content: "life";
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -66,6 +66,12 @@ body {
   border-radius: 5px;
 }
 
+.totals {
+  align-self: flex-end;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
 .dragscroll {
   overflow: hidden;
   cursor: grab;
