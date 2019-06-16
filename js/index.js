@@ -102,28 +102,35 @@ function buildBaseList() {
             var interaction = event.interaction;
 
             var element = encyclopedia[$(event.relatedTarget).data("element")][$(event.target).data("element")];
+            console.log(element);
             if($(event.target).hasClass('thing') && element){
 
-                var clone = event.target.cloneNode(true);
-                clone.setAttribute('clonable','false');
-                clone.style.position = "absolute";
-                clone.style.left = event.target.offsetLeft+"px";
-                clone.style.top = event.target.offsetTop+"px";
-                $(clone).removeClass($(event.target).data('element'))
-                    .addClass(element)
-                    .data('element', element);
+                element.forEach(function(elem, idx){
+                    var clone = event.target.cloneNode(true);
+                    clone.setAttribute('clonable','false');
+                    clone.style.position = "absolute";
 
-                $('.play-area').append(clone);
-                interaction.start({ name: 'drag' },event.interactable,clone);
-                $(event.relatedTarget).fadeOut('slow', function () {
-                    $(this).remove();
-                });
-                $(event.target).fadeOut('slow', function () {
-                    $(this).remove();
+                    var offsetLeft = event.target.offsetLeft + (idx*20);
+                    var offsetTop = event.target.offsetTop + (idx*30);
+                    clone.style.left = offsetLeft+"px";
+                    clone.style.top = offsetTop+"px";
+                    $(clone).removeClass($(event.target).data('element'))
+                        .addClass(elem)
+                        .data('element', elem);
+
+                    $('.play-area').append(clone);
+                    interaction.start({ name: 'drag' },event.interactable,clone);
+                    $(event.relatedTarget).fadeOut('slow', function () {
+                        $(this).remove();
+                    });
+                    $(event.target).fadeOut('slow', function () {
+                        $(this).remove();
+                    });
+
+                    encyclopedia[elem].active = true;
+                    buildBaseList();
                 });
 
-                encyclopedia[element].active = true;
-                buildBaseList();
             }
         }
     });

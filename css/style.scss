@@ -107,7 +107,7 @@ body {
 $elements: earth, air, fire, water, lava, energy,
 dust,steam,mud,rain,pressure,heat,sea,
 obsidian,rock, arrowhead,land, brick, lake, wind,movement,
-river, lightning,swamp,life;
+river, lightning,swamp,life, fungus, algae, plants;
 
 @each $elem in $elements {
   //$i: index($elements, $elem);
