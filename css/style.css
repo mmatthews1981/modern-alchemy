@@ -72,7 +72,7 @@ body {
 .totals {
   align-self: flex-end;
   margin-bottom: 20px;
-  font-size: 24px;
+  font-size: 32px;
 }
 
 .dragscroll {
@@ -403,6 +403,42 @@ body {
 
 .thing.life:after {
   content: "life";
+}
+
+.fungus {
+  background-image: url(svgs/fungus.svg);
+}
+
+.base.fungus:after {
+  content: "fungus";
+}
+
+.thing.fungus:after {
+  content: "fungus";
+}
+
+.algae {
+  background-image: url(svgs/algae.svg);
+}
+
+.base.algae:after {
+  content: "algae";
+}
+
+.thing.algae:after {
+  content: "algae";
+}
+
+.plants {
+  background-image: url(svgs/plants.svg);
+}
+
+.base.plants:after {
+  content: "plants";
+}
+
+.thing.plants:after {
+  content: "plants";
 }
 
 /*# sourceMappingURL=style.css.map */

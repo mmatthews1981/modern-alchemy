@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="modern alchemy">
+  <component name="PublishConfigData" autoUpload="Always" serverName="modern alchemy" autoUploadExternalChanges="true">
     <serverData>
       <paths name="modern alchemy">
         <serverdata>
