@@ -40,7 +40,8 @@ body {
   display: inline-block;
 }
 
-.clear-screen {
+.clear-screen,
+.about{
   background-color: lightgrey;
   padding: 15px 25px;
   width: max-content;
@@ -49,10 +50,9 @@ body {
   margin: 30px 20px;
   align-self: flex-end;
   cursor: default;
-}
-
-.clear-screen:active {
-  background-color: gray;
+  &:active {
+    background-color: gray;
+  }
 }
 
 .trash-can{
@@ -104,10 +104,9 @@ body {
   text-align: center;
 }
 
-$elements: earth, air, fire, water, lava, energy,
-dust,steam,mud,rain,pressure,heat,sea,
-obsidian,rock, arrowhead,land, brick, lake, wind,movement,
-river, lightning,swamp,life, fungus, algae, plants;
+$elements: earth,air,fire,water,lava,energy,dust,steam,mud,rain,pressure,heat,sea,
+obsidian,rock,arrowhead,land,brick,lake,wind,movement,river,lightning,swamp,life,fungus,algae,plants,
+mountains,desert,bacteria,animals,volcano,island;
 
 @each $elem in $elements {
   //$i: index($elements, $elem);
@@ -122,5 +121,23 @@ river, lightning,swamp,life, fungus, algae, plants;
 
   .thing.#{$elem}:after {
     content: '#{$elem}';
+  }
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  margin: 55px;
+  padding: 40px;
+  background-color: lightgray;
+  border-radius: 25px;
+  border: 1px solid black;
+  max-width: 600px;
+  h1 {
+    margin-top: 0;
+  }
+  .close {
+    text-decoration: underline;
+    cursor: pointer;
   }
 }

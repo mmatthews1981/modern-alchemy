@@ -36,7 +36,8 @@ encyclopedia.water = {
 };
 encyclopedia.lava = {
     active: false,
-    water: ["obsidian"]
+    water: ["obsidian"],
+    land: ["volcano"]
 };
 encyclopedia.energy = {
     active: false,
@@ -63,11 +64,13 @@ encyclopedia.pressure = {
     air: ["wind"]
 };
 encyclopedia.heat = {
-    active: false
+    active: false,
+    land: ["desert"]
 };
 encyclopedia.sea = {
     active: false,
-    life: ["algae"]
+    life: ["algae", "bacteria"],
+    volcano: ["island"]
 };
 encyclopedia.obsidian = {
     active: false,
@@ -86,7 +89,11 @@ encyclopedia.land = {
     active: false,
     water: ["lake"],
     river: ["swamp"],
-    algae: ["plants"]
+    algae: ["plants"],
+    land: ["mountains"],
+    heat: ["desert"],
+    lava: ["volcano"],
+    volcano: ["island"]
 };
 encyclopedia.brick = {
     active: false
@@ -94,7 +101,7 @@ encyclopedia.brick = {
 encyclopedia.lake = {
     active: false,
     movement: ["river"],
-    life: ["algae"]
+    life: ["algae", "bacteria"]
 };
 encyclopedia.wind = {
     active: false,
@@ -111,7 +118,8 @@ encyclopedia.river = {
 };
 encyclopedia.swamp = {
     active: false,
-    lightning: ["life"]
+    lightning: ["life"],
+    life: ["bacteria"]
 };
 encyclopedia.lightning = {
     active: false,
@@ -120,8 +128,8 @@ encyclopedia.lightning = {
 encyclopedia.life = {
     active: false,
     rock: ["fungus"],
-    lake: ["algae"],
-    sea: ["algae"]
+    lake: ["algae", "bacteria"],
+    sea: ["algae", "bacteria"]
 };
 encyclopedia.fungus = {
     active: false,
@@ -132,3 +140,24 @@ encyclopedia.algae = {
     active: false,
     land: ["plants"]
 };
+encyclopedia.mountains = {
+    active: false,
+};
+encyclopedia.desert = {
+    active: false,
+};
+encyclopedia.bacteria = {
+    active: false,
+    bacteria: ["animals"]
+};
+encyclopedia.animals = {
+    active: false
+};
+encyclopedia.volcano = {
+    active: false,
+    land: ["island"],
+    sea: ["island"]
+};
+encyclopedia.island = {
+    active: false
+}

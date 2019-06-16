@@ -43,7 +43,8 @@ body {
   display: inline-block;
 }
 
-.clear-screen {
+.clear-screen,
+.about {
   background-color: lightgrey;
   padding: 15px 25px;
   width: max-content;
@@ -53,8 +54,8 @@ body {
   align-self: flex-end;
   cursor: default;
 }
-
-.clear-screen:active {
+.clear-screen:active,
+.about:active {
   background-color: gray;
 }
 
@@ -439,6 +440,96 @@ body {
 
 .thing.plants:after {
   content: "plants";
+}
+
+.mountains {
+  background-image: url(svgs/mountains.svg);
+}
+
+.base.mountains:after {
+  content: "mountains";
+}
+
+.thing.mountains:after {
+  content: "mountains";
+}
+
+.desert {
+  background-image: url(svgs/desert.svg);
+}
+
+.base.desert:after {
+  content: "desert";
+}
+
+.thing.desert:after {
+  content: "desert";
+}
+
+.bacteria {
+  background-image: url(svgs/bacteria.svg);
+}
+
+.base.bacteria:after {
+  content: "bacteria";
+}
+
+.thing.bacteria:after {
+  content: "bacteria";
+}
+
+.animals {
+  background-image: url(svgs/animals.svg);
+}
+
+.base.animals:after {
+  content: "animals";
+}
+
+.thing.animals:after {
+  content: "animals";
+}
+
+.volcano {
+  background-image: url(svgs/volcano.svg);
+}
+
+.base.volcano:after {
+  content: "volcano";
+}
+
+.thing.volcano:after {
+  content: "volcano";
+}
+
+.island {
+  background-image: url(svgs/island.svg);
+}
+
+.base.island:after {
+  content: "island";
+}
+
+.thing.island:after {
+  content: "island";
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  margin: 55px;
+  padding: 40px;
+  background-color: lightgray;
+  border-radius: 25px;
+  border: 1px solid black;
+  max-width: 600px;
+}
+.modal h1 {
+  margin-top: 0;
+}
+.modal .close {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */

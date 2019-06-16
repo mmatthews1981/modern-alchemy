@@ -1,9 +1,9 @@
 //TODO: add cookie to save active element progress automatically
 //TODO: add button to clear progress
-//TODO: add stroke to wind icon and replace
 //TODO: unmixable elements slide off each other
 //TODO: slides try to mix with anything it lands on
 //TODO: add non-mixing element interactivity, like long drag = time or drag from blank = nothing
+//TODO: redo mountains, desert, bacteria icons and make them bigger
 
 
 
@@ -78,7 +78,6 @@ function buildBaseList() {
         var interaction = event.interaction;
         if (interaction.pointerIsDown && !interaction.interacting() && event.currentTarget.getAttribute('clonable') != 'false') {
 
-            var original = event.currentTarget;
             var clone = event.currentTarget.cloneNode(true);
             var x = clone.offsetLeft;
             var y = clone.offsetTop;
@@ -100,7 +99,6 @@ function buildBaseList() {
             var interaction = event.interaction;
 
             var element = encyclopedia[$(event.relatedTarget).data("element")][$(event.target).data("element")];
-            console.log(element);
             if($(event.target).hasClass('thing') && element){
 
                 element.forEach(function(elem, idx){
@@ -151,5 +149,9 @@ $('.clear-screen').click(function (e) {
     $('.thing').fadeOut('slow', function () {
         $(this).remove();
     });
+});
+
+$('.about, .close').on('click', function(){
+   $('.modal').toggle();
 });
 
