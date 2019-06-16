@@ -4,6 +4,8 @@
 //TODO: slides try to mix with anything it lands on
 //TODO: add non-mixing element interactivity, like long drag = time or drag from blank = nothing
 //TODO: redo mountains, desert, bacteria icons and make them bigger
+//TODO: house + sky = penthouse
+//TODO: depluralize
 
 
 

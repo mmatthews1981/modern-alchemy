@@ -5,7 +5,8 @@ encyclopedia.fire = {
     air: ["energy"],
     water: ["steam"],
     fire: ["heat"],
-    mud: ["brick"]
+    mud: ["brick"],
+    sand: ["glass"]
 };
 encyclopedia.earth = {
     active: true,
@@ -23,7 +24,9 @@ encyclopedia.air = {
     water: ["rain"],
     air: ["pressure"],
     pressure: ["wind"],
-    energy: ["lightning"]
+    energy: ["lightning"],
+    steam: ["cloud"],
+    cloud: ["sky"]
 };
 encyclopedia.water = {
     active: true,
@@ -32,61 +35,67 @@ encyclopedia.water = {
     air: ["rain"],
     water: ["sea"],
     lava: ["obsidian"],
-    land: ["lake"]
+    land: ["lake"],
+    heat: ["humidity"]
 };
 encyclopedia.lava = {
-    active: false,
+    active: true,
     water: ["obsidian"],
     land: ["volcano"]
 };
 encyclopedia.energy = {
-    active: false,
+    active: true,
     wind: ["movement"],
     air: ["lightning"]
 };
 
 encyclopedia.dust = {
-    active: false
+    active: true
 };
 encyclopedia.steam = {
-    active: false
+    active: true,
+    air: ["cloud"]
 };
 encyclopedia.mud = {
-    active: false,
+    active: true,
     fire: ["brick"]
 };
 encyclopedia.rain = {
-    active: false
+    active: true
 };
 encyclopedia.pressure = {
-    active: false,
+    active: true,
     earth: ["rock"],
     air: ["wind"]
 };
 encyclopedia.heat = {
-    active: false,
-    land: ["desert"]
+    active: true,
+    land: ["desert"],
+    animal: ["lizard"],
+    water: ["humidity"]
 };
 encyclopedia.sea = {
-    active: false,
+    active: true,
     life: ["algae", "bacteria"],
     volcano: ["island"]
 };
 encyclopedia.obsidian = {
-    active: false,
+    active: true,
     rock: ['arrowhead']
 };
 encyclopedia.rock = {
-    active: false,
+    active: true,
     obsidian: ["arrowhead"],
     life: ["fungus"],
-    fungus: ["land"]
+    fungus: ["land"],
+    animal: ["lizard"],
+    wind: ["sand"]
 };
 encyclopedia.arrowhead = {
-    active: false
+    active: true
 };
 encyclopedia.land = {
-    active: false,
+    active: true,
     water: ["lake"],
     river: ["swamp"],
     algae: ["plants"],
@@ -96,68 +105,106 @@ encyclopedia.land = {
     volcano: ["island"]
 };
 encyclopedia.brick = {
-    active: false
+    active: true,
+    glass: ["house"]
 };
 encyclopedia.lake = {
-    active: false,
+    active: true,
     movement: ["river"],
     life: ["algae", "bacteria"]
 };
 encyclopedia.wind = {
-    active: false,
+    active: true,
     wind: ["movement"],
-    energy: ["movement"]
+    energy: ["movement"],
+    rock: ["sand"]
 };
 encyclopedia.movement = {
-    active: false,
+    active: true,
     lake: ["river"]
 };
 encyclopedia.river = {
-    active: false,
+    active: true,
     land: ["swamp"]
 };
 encyclopedia.swamp = {
-    active: false,
+    active: true,
     lightning: ["life"],
     life: ["bacteria"]
 };
 encyclopedia.lightning = {
-    active: false,
+    active: true,
     swamp: ["life"]
 };
 encyclopedia.life = {
-    active: false,
+    active: true,
     rock: ["fungus"],
     lake: ["algae", "bacteria"],
     sea: ["algae", "bacteria"]
 };
 encyclopedia.fungus = {
-    active: false,
+    active: true,
     rock: ["land"],
     earth: ["land"]
 };
 encyclopedia.algae = {
-    active: false,
+    active: true,
     land: ["plants"]
 };
 encyclopedia.mountains = {
-    active: false,
+    active: true,
 };
 encyclopedia.desert = {
-    active: false,
+    active: true,
 };
 encyclopedia.bacteria = {
-    active: false,
-    bacteria: ["animals"]
+    active: true,
+    bacteria: ["animal"]
 };
-encyclopedia.animals = {
-    active: false
+encyclopedia.animal = {
+    active: true,
+    heat: ["lizard"],
+    rock: ["lizard"]
 };
 encyclopedia.volcano = {
-    active: false,
+    active: true,
     land: ["island"],
     sea: ["island"]
 };
 encyclopedia.island = {
-    active: false
+    active: true
+};
+encyclopedia.lizard = {
+    active: true,
+    humidity: ["florida"]
+};
+encyclopedia.humidity = {
+    active: true,
+    lizard: ["florida"]
+};
+encyclopedia.florida = {
+    active: true
+};
+encyclopedia.sand = {
+    active: true,
+    fire: ["glass"]
+};
+encyclopedia.glass = {
+    active: true,
+    glass: ["glasses"],
+    brick: ["house"]
+};
+encyclopedia.glasses = {
+    active: true
+};
+encyclopedia.house = {
+    active: true
+};
+encyclopedia.cloud = {
+    active: true,
+    cloud: ["sky"],
+    air: ["sky"]
+};
+encyclopedia.sky = {
+    active: true
 }

@@ -262,6 +262,30 @@ body {
   content: "sea";
 }
 
+.clouds {
+  background-image: url(svgs/cloud.svg);
+}
+
+.base.clouds:after {
+  content: "clouds";
+}
+
+.thing.clouds:after {
+  content: "clouds";
+}
+
+.sky {
+  background-image: url(svgs/sky.svg);
+}
+
+.base.sky:after {
+  content: "sky";
+}
+
+.thing.sky:after {
+  content: "sky";
+}
+
 .obsidian {
   background-image: url(svgs/obsidian.svg);
 }
@@ -512,6 +536,90 @@ body {
 
 .thing.island:after {
   content: "island";
+}
+
+.lizard {
+  background-image: url(svgs/lizard.svg);
+}
+
+.base.lizard:after {
+  content: "lizard";
+}
+
+.thing.lizard:after {
+  content: "lizard";
+}
+
+.humidity {
+  background-image: url(svgs/humidity.svg);
+}
+
+.base.humidity:after {
+  content: "humidity";
+}
+
+.thing.humidity:after {
+  content: "humidity";
+}
+
+.florida {
+  background-image: url(svgs/florida.svg);
+}
+
+.base.florida:after {
+  content: "florida";
+}
+
+.thing.florida:after {
+  content: "florida";
+}
+
+.sand {
+  background-image: url(svgs/sand.svg);
+}
+
+.base.sand:after {
+  content: "sand";
+}
+
+.thing.sand:after {
+  content: "sand";
+}
+
+.glass {
+  background-image: url(svgs/glass.svg);
+}
+
+.base.glass:after {
+  content: "glass";
+}
+
+.thing.glass:after {
+  content: "glass";
+}
+
+.glasses {
+  background-image: url(svgs/glasses.svg);
+}
+
+.base.glasses:after {
+  content: "glasses";
+}
+
+.thing.glasses:after {
+  content: "glasses";
+}
+
+.house {
+  background-image: url(svgs/house.svg);
+}
+
+.base.house:after {
+  content: "house";
+}
+
+.thing.house:after {
+  content: "house";
 }
 
 .modal {
