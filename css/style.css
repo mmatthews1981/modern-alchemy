@@ -262,16 +262,16 @@ body {
   content: "sea";
 }
 
-.clouds {
+.cloud {
   background-image: url(svgs/cloud.svg);
 }
 
-.base.clouds:after {
-  content: "clouds";
+.base.cloud:after {
+  content: "cloud";
 }
 
-.thing.clouds:after {
-  content: "clouds";
+.thing.cloud:after {
+  content: "cloud";
 }
 
 .sky {
@@ -502,16 +502,16 @@ body {
   content: "bacteria";
 }
 
-.animals {
-  background-image: url(svgs/animals.svg);
+.animal {
+  background-image: url(svgs/animal.svg);
 }
 
-.base.animals:after {
-  content: "animals";
+.base.animal:after {
+  content: "animal";
 }
 
-.thing.animals:after {
-  content: "animals";
+.thing.animal:after {
+  content: "animal";
 }
 
 .volcano {
