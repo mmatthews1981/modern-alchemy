@@ -105,8 +105,10 @@ body {
 }
 
 $elements: earth,air,fire,water,lava,energy,dust,steam,mud,rain,pressure,heat,sea,cloud,sky,
-obsidian,rock,arrowhead,land,brick,lake,wind,movement,river,lightning,swamp,life,fungus,algae,plants,
-mountains,desert,bacteria,animal,volcano,island,lizard,humidity,florida,sand,glass,glasses,house;
+obsidian,rock,arrowhead,land,brick,lake,wind,movement,river,lightning,swamp,life,fungus,algae,plant,
+mountains,desert,bacteria,animal,volcano,island,lizard,humidity,florida,sand,glass,glasses,house,
+bird,duck,time,evolution,moss,fern,seed,flower,pine,pinecone,squirrel,jellyfish,coral,palmtree,death,metal,
+forest,phoenix;
 
 @each $elem in $elements {
   //$i: index($elements, $elem);
